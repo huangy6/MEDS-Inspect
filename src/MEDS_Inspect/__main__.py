@@ -8,10 +8,11 @@ def main():
     parser = argparse.ArgumentParser(description="Run the MEDS INSPECT app with a specified file path.")
     parser.add_argument("--file_path", type=str, help="The path to the MEDS data folder")
     parser.add_argument("--port", type=int, help="The port to run the app on", default=8050)
+    parser.add_argument("--host", type=int, help="The host to run the app on", default='localhost')
     args = parser.parse_args()
 
     file_path = args.file_path if args.file_path else None
-    run_app(file_path, args.port)
+    run_app(file_path, args.port, args.host)
 
 
 if __name__ == "__main__":
